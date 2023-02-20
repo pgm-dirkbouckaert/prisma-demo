@@ -1,0 +1,47 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model NavigationItem {
+  id   Int    @id @default(autoincrement())
+  url  String
+  text String
+}
+
+model User {
+  id         Int        @id @default(autoincrement())
+  firstname  String
+  lastname   String
+  user_meta  UserMeta?  @relation(fields: [userMetaId], references: [id])
+  userMetaId Int?       @unique // <-- include this explicitly
+  roles      Role[] // many-to-many
+  interests  Interest[] // many-to-many
+}
+
+model UserMeta {
+  id      Int    @id @default(autoincrement())
+  address String
+  zipCode String
+  city    String
+  User    User?
+}
+
+model Interest {
+  id    Int    @id @default(autoincrement())
+  name  String @unique
+  users User[] // many-to-many
+}
+
+model Role {
+  id    Int    @id @default(autoincrement())
+  name  String @unique
+  users User[] // many-to-many
+}
