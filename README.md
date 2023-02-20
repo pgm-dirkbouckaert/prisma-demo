@@ -11,6 +11,7 @@ It has been refactored to use [Prisma](https://www.prisma.io/)
 ```bash
 $ npm install
 $ npx prisma
+$ npx prisma migrate dev
 ```
 
 You should add a .env file containing:
