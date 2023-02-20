@@ -10,6 +10,14 @@ It has been refactored to use [Prisma](https://www.prisma.io/)
 
 ```bash
 $ npm install
+$ npx prisma
+```
+
+You should add a .env file containing:
+
+```bash
+PORT=3000
+DATABASE_URL="file:./dev.db"
 ```
 
 ## Running the App
