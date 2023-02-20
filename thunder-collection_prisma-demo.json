@@ -1,0 +1,142 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "prisma-demo",
+    "dateExported": "2023-02-20T16:21:49.628Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "5681190e-ca5e-4911-8741-b5a2b2b759e2",
+            "name": "users",
+            "containerId": "",
+            "created": "2023-02-19T16:31:06.631Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "d341897c-d2ec-426c-bb25-81c5392b0a10",
+            "name": "interests",
+            "containerId": "",
+            "created": "2023-02-19T16:31:06.636Z",
+            "sortNum": 20000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "d2b80b45-f968-4231-ab4b-66d6a43aa454",
+            "colId": "ac4064a0-aafc-4ae2-966e-9cd7a952d2e9",
+            "containerId": "d341897c-d2ec-426c-bb25-81c5392b0a10",
+            "name": "GET interests new",
+            "url": "http://localhost:3000/api/interest",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-02-19T16:31:06.635Z",
+            "modified": "2023-02-19T16:31:06.635Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "c4271e03-9f54-405a-81aa-2ed6b519c354",
+            "colId": "ac4064a0-aafc-4ae2-966e-9cd7a952d2e9",
+            "containerId": "5681190e-ca5e-4911-8741-b5a2b2b759e2",
+            "name": "GET users",
+            "url": "http://localhost:3000/api/user",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-02-19T16:31:06.636Z",
+            "modified": "2023-02-19T16:31:06.636Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "6aed85d4-5a41-4a76-a061-2db858d671f1",
+            "colId": "ac4064a0-aafc-4ae2-966e-9cd7a952d2e9",
+            "containerId": "5681190e-ca5e-4911-8741-b5a2b2b759e2",
+            "name": "GET user by id",
+            "url": "http://localhost:3000/api/user",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-02-19T16:31:06.637Z",
+            "modified": "2023-02-19T16:31:06.637Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"id\": 1\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "49cf4737-e38b-4c20-9b65-38148384b839",
+            "colId": "ac4064a0-aafc-4ae2-966e-9cd7a952d2e9",
+            "containerId": "5681190e-ca5e-4911-8741-b5a2b2b759e2",
+            "name": "UPDATE user (by id)",
+            "url": "http://localhost:3000/api/user/4",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2023-02-19T16:31:06.638Z",
+            "modified": "2023-02-19T17:26:49.243Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"data\": { \n    \"firstname\": \"Peter\", \n    \"user_meta\": {\n      \"create\": {\n        \"address\": \"Parkroad 77\",\n        \"zipCode\": \"1000\",\n        \"city\": \"New York\"\n      }\n    }\n  },\n  \"include\": { \"user_meta\": true, \"roles\": true, \"interests\": true }\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "0aa41506-a800-4410-8620-87e5d54354b3",
+            "colId": "ac4064a0-aafc-4ae2-966e-9cd7a952d2e9",
+            "containerId": "5681190e-ca5e-4911-8741-b5a2b2b759e2",
+            "name": "UPDATE user roles & interests",
+            "url": "http://localhost:3000/api/user/4",
+            "method": "PUT",
+            "sortNum": 35000,
+            "created": "2023-02-19T17:00:04.511Z",
+            "modified": "2023-02-19T17:24:32.198Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"data\": { \n    \"roles\": {\n      \"connectOrCreate\": {\n        \"where\": {\"name\": \"editor\"},\n        \"create\": {\"name\": \"editor\"}\n      }\n    },\n    \"interests\": {\n      \"connectOrCreate\": {\n          \"where\":  {\"name\": \"Architecture\"}, \n          \"create\": {\"name\": \"Architecture\"} \n      }\n    }\n  },\n  \"include\": { \"user_meta\": true, \"roles\": true, \"interests\": true }\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "fd2478f1-30d4-48dc-be74-c22864b1e2d6",
+            "colId": "ac4064a0-aafc-4ae2-966e-9cd7a952d2e9",
+            "containerId": "5681190e-ca5e-4911-8741-b5a2b2b759e2",
+            "name": "POST new user",
+            "url": "http://localhost:3000/api/user",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2023-02-19T16:31:06.639Z",
+            "modified": "2023-02-19T17:25:20.309Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"data\": {\n    \"firstname\": \"Delete\",\n    \"lastname\": \"Me\",\n    \"user_meta\": {\n      \"create\": {\n        \"address\": \"DeleteRoad 77\",\n        \"zipCode\": \"1000\",\n        \"city\": \"No City\"\n      }\n    }\n  },\n  \"include\": { \"user_meta\": true, \"roles\": true, \"interests\": true }\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "954722b0-46e4-4c3a-b680-96e09ade65c3",
+            "colId": "ac4064a0-aafc-4ae2-966e-9cd7a952d2e9",
+            "containerId": "5681190e-ca5e-4911-8741-b5a2b2b759e2",
+            "name": "DELETE user (by id)",
+            "url": "http://localhost:3000/api/user/5",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2023-02-19T16:31:06.640Z",
+            "modified": "2023-02-19T17:28:33.721Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
