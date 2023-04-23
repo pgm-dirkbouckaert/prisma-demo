@@ -28,9 +28,8 @@ $ npm run start
 ```
 
 ## Authors
-
-- Tim De Paepe
-- Frederick Roegiers
+- Tim De Paepe @timdpaep
+- Frederick Roegiers @rogerthat-be
 
 ## Refactored by
 
