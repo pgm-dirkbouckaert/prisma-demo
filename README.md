@@ -28,9 +28,6 @@ $ npm run start
 ```
 
 ## Authors
-- Tim De Paepe @timdpaep
-- Frederick Roegiers @rogerthat-be
-
-## Refactored by
-
-- Dirk Bouckaert
+- Tim De Paepe [@timdpaep](https://github.com/timdpaep)
+- Frederick Roegiers [@rogerthat-be](https://github.com/rogerthat-be)
+- Refactored by me
